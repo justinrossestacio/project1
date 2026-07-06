@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cd09160579.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+    <style>
+        @font-face {
+            font-family: "Stark";
+            src: url("Stark.otf");
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #1E1E1E;
+        }
+
+        h1{
+            font-family: "stark";
+            font-style: italic;
+            letter-spacing: 3px;
+            color:  #8C742C;
+            font-size: 50px;
+            margin-left: 10px;
+        }
+
+        nav{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul{
+            padding: 10px;
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+            gap: 20px;
+        }
+
+        a{
+            font-family: "stark";
+            text-decoration: none;
+            color: white;
+            font-size: 32px;
+            margin: 0;
+        }
+
+        #menu-bar{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 32px;
+            display: none;
+        }
+
+        @media (width: 768px){
+            h1{
+                font-size: 30px;
+            }
+
+            nav{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a{
+                font-size: 25px;
+            }
+        }
+
+        @media (max-width: 425px){
+            #menu-bar{
+                display: block;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            h1{
+                font-size: 28px;
+            }
+
+            ul{
+                position: absolute;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                right: 10px;
+                gap: 10px;
+            }
+
+            ul.active{
+                display: flex;
+            }
+
+            ul a{
+                font-size: 18px;
+            }
+        }
+    </style>
+<body>
+    <header>
+        <nav>
+            <h1>JUSTIN ROSS</h1>
+            <button id="menu-bar"><i class="fa-solid fa-bars"></i></button>
+            <ul>
+                <a href=""><li><i class="fa-solid fa-house"></i>HOME</li></a>
+                <a href=""><li><i class="fa-solid fa-book"></i>SKILLS</li></a>
+                <a href=""><li><i class="fa-solid fa-circle-info"></i>ABOUT</li></a>
+                <a href=""><li><i class="fa-solid fa-circle-user"></i>LOGIN</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const menuBar = document.getElementById('menu-bar');
+        const nav = document.querySelector('nav ul');
+
+        menuBar.addEventListener('click', () =>{
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
